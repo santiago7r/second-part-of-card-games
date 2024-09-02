@@ -16,7 +16,7 @@ const animation = keyframes`
 `
 
 const GameCardContainer = ({ children }: Props) => {
-  const myAmazingAnimation = `${animation} infinite 0.5s`
+  const myAmazingAnimation = `${animation} 1 0.5s`
   return (
     <Box 
       _hover={{

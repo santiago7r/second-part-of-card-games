@@ -1,40 +1,40 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
+import { Game } from "../entities/Game";
 import { Platform } from "../entities/Platform";
+import CriticScore from "./CriticScore";
+import DefinitionItem from "./DefinitionItem";
 
 interface Props {
-    score: number;
-    parent_platforms: { platform: Platform; }[];
+    game: Game;
 }
 
 
 
-const GameAtributes = ({score, parent_platforms}: Props) => {
+const GameAtributes = ({game}: Props) => {
 
     return (
-        <SimpleGrid columns={[2, null, 2]} spacing='100px' marginY={3}>
-            <Box bg='#121212' height='80px'>
-                <div>Platforms</div>
-                {parent_platforms.map((platformObj) => (
-                    <ul key={platformObj.platform.id}>
-                        <li>
-                            {platformObj.platform.name}
-                        </li>
-                    </ul>
-      ))}
-            </Box>
-            <Box bg='#121212' height='80px'>
-                <div>Metascore</div>
-                <div>{score}</div>
-            </Box>
-            <Box bg='#121212' height='80px'>
-                <div>Genres</div>
-                <div>Info</div>
-            </Box>
-            <Box bg='#121212' height='80px'>
-                <div>Publishers</div>
-                <div>Info</div>
-            </Box>
-        </SimpleGrid>
+        <SimpleGrid columns={2} as='dl'>
+        <DefinitionItem term="Platform">
+            {game.parent_platforms?.map(({platform}) =>
+                (<Text
+                    key={platform.id}
+                >
+                    {platform.name}
+                </Text>))
+            }
+        </DefinitionItem>
+        <DefinitionItem term="Metascore">
+            <CriticScore score={game.metacritic} />
+        </DefinitionItem>
+        <DefinitionItem term="Genres">
+            {game.genres.map( (genre) => 
+                <Text key={genre.id}>{genre.name}</Text>
+            )}
+        </DefinitionItem>
+        <DefinitionItem term="Publisher">
+            {game.publishers?.map((p) => <Text key={p.id}>{p.name}</Text>)}
+        </DefinitionItem>
+    </SimpleGrid>
     )
 }
 

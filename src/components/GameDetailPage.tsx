@@ -1,9 +1,6 @@
-import { Button, Heading, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { Heading, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import useGame from "../hooks/useGame";
-import CriticScore from "./CriticScore";
-import DefinitionItem from "./DefinitionItem";
 import ExpandableText from "./ExpandableText";
 import GameAtributes from "./GameAtributes";
 

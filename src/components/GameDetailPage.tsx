@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useGame from "../hooks/useGame";
 import ExpandableText from "./ExpandableText";
+import GameAtributes from "./GameAtributes";
 
 
 const GameDetailPage = () => {
@@ -18,6 +19,7 @@ const GameDetailPage = () => {
         <>
             <Heading>{game.name} </Heading>
             <ExpandableText>{game.description_raw}</ExpandableText>
+            <GameAtributes parent_platforms={game.parent_platforms} score={game.metacritic} />
         </>
     )
 }

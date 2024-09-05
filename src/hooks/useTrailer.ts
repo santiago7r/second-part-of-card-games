@@ -10,12 +10,12 @@ interface ITrailer {
 }
 
 
-const useTrailer = ({id}: ITrailer) =>{
-    const apiClient = new APIClient<ITrailer>(`/games/${id}/movies`)
+const useTrailer = (gameId: number) =>{
+    const apiClient = new APIClient<ITrailer>(`/games/${gameId}/movies`)
 
     return (
         useQuery({
-            queryKey: ['trailer', id],
+            queryKey: ['trailer', gameId],
             queryFn: apiClient.getAll
           
         })

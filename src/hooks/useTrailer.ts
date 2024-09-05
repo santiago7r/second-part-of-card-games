@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { Genre } from "../entities/Genre";
 import APIClient from "../services/api-client";
 
 interface ITrailer {

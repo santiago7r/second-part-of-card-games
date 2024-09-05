@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 
 interface ITrailer {
-    data: { 480: string, max: string},
+    data: { 480: string; max: string},
     id: number,
     name: string,
-    prview: string
+    preview: string
 }
 
 

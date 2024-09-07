@@ -4,7 +4,7 @@ import APIClient from "../services/api-client";
 
 
 const useScreenshot = (game_pk: string) => {
-    const apiClient = new APIClient<IscreenShot>(`/games/${game_pk}/stores`);
+    const apiClient = new APIClient<IscreenShot>(`/games/${game_pk}/screenshots`);
 
     return (
         useQuery({

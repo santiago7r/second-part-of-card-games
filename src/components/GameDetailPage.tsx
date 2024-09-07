@@ -4,6 +4,7 @@ import useGame from "../hooks/useGame";
 import ExpandableText from "./ExpandableText";
 import GameAtributes from "./GameAtributes";
 import GameTrailer from "./GameTrailer";
+import Screenshots from "./Screenshots";
 
 
 const GameDetailPage = () => {
@@ -21,6 +22,7 @@ const GameDetailPage = () => {
             <ExpandableText>{game.description_raw}</ExpandableText>
             <GameAtributes game={game} />
             <GameTrailer gameId={game.id} />
+            <Screenshots gameId={game.id} />
 
         </>
     )

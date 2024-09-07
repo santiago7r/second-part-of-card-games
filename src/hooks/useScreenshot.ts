@@ -3,15 +3,13 @@ import { IscreenShot } from "../entities/Iscreenshot";
 import APIClient from "../services/api-client";
 
 
-const useScreenshot = (game_pk: string) => {
-    const apiClient = new APIClient<IscreenShot>(`/games/${game_pk}/screenshots`);
+const useScreenshot = (gameId: number) => {
+    const apiClient = new APIClient<IscreenShot>(`/games/${gameId}/screenshots`);
 
-    return (
-        useQuery({
-            queryKey: ['screenshots', game_pk],
+    return useQuery({
+            queryKey: ['screenshots', gameId],
             queryFn: apiClient.getAll
         })
-    )
 }
 
 export default useScreenshot;

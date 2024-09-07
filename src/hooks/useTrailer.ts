@@ -4,7 +4,7 @@ import APIClient from "../services/api-client";
 
 
 
-const useTrailer = (gameId: number) =>{
+const useTrailer = (gameId: number) => {
     const apiClient = new APIClient<ITrailer>(`/games/${gameId}/movies`)
 
     return (

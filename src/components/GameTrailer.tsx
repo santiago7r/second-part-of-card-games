@@ -13,8 +13,8 @@ const GameTrailer = ({gameId}: Props) => {
 
     return (
         <video 
-            src={data?.results[0].data[480]}
-            poster={data?.results[0].preview}
+            src={data?.results[0]?.data[480]}
+            poster={data?.results[0]?.preview}
             controls
         />
     )

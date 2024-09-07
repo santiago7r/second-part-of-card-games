@@ -22,8 +22,6 @@ const GameTrailer = ({gameId}: Props) => {
             controls
         />
     )
-
-
 }
 
 export default GameTrailer;

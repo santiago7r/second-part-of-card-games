@@ -1,7 +1,6 @@
-import { HStack, Image } from '@chakra-ui/react'
+import { HStack, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.webp';
-import useGameQueryStore from '../store';
 import ColorModeSwitch from './ColorModeSwitch';
 import SearchInput from './SearchInput';
 
